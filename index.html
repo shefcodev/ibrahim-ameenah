@@ -1,91 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Registration Form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty & Cosmetics</title>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #d4c1a8; /* Changed to a warm professional color */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            animation: backgroundFade 5s infinite alternate;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffe4e1;
+        text-align: center;
+      }
+      .container {
+        padding: 20px;
+      }
+      .navbar {
+        background: #ff69b4;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+      .navbar a:hover {
+        color: #ffd700;
+      }
+      .hero {
+        padding: 50px;
+        background: #ffb6c1;
+      }
+      .products,
+      .testimonials,
+      .newsletter,
+      .contact,
+      .footer {
+        padding: 40px;
+      }
+      .newsletter {
+        max-width: 90%;
+        margin: auto;
+        padding: 20px;
+      }
+      .product,
+      .contact-form {
+        display: block;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 400px;
+      }
+      .btn {
+        padding: 10px 20px;
+        background: #ff69b4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .btn:hover {
+        transform: scale(1.1);
+      }
+      .input {
+        padding: 10px;
+        margin: 10px;
+        width: 90%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        display: block;
+      }
+      .footer {
+        background: #ff69b4;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .footer .social-icons {
+        margin-top: 10px;
+      }
+      .footer .social-icons i {
+        font-size: 24px;
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .footer .social-icons i:hover {
+        transform: scale(1.2);
+      }
+      @media (max-width: 600px) {
+        .hero {
+          padding: 30px;
         }
-        .form-container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 2s ease-in-out;
+        .navbar {
+          flex-direction: column;
+          align-items: center;
         }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            animation: fadeIn 3s ease-in-out;
+        .navbar a {
+          font-size: 16px;
+          padding: 5px 0;
         }
-        button {
-            background-color: #3e2723;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            animation: bounce 1s infinite alternate;
+        .products,
+        .testimonials,
+        .newsletter,
+        .contact,
+        .footer {
+          padding: 20px;
         }
-        button:hover {
-            background-color: #5d4037;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-5px); }
-        }
-        @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes backgroundFade {
-            from { background-color: #d4c1a8; }
-            to { background-color: #c2a389; }
-        }
+      }
     </style>
-</head>
-<body>
-    <div class="form-container">
-        <h2>Library Registration</h2>
-        <form>
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <label for="membership">Membership Type:</label>
-            <select id="membership" name="membership">
-                <option value="student">Student</option>
-                <option value="faculty">Faculty</option>
-                <option value="general">General Public</option>
-            </select>
-            
-            <label for="message">Additional Information:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-            
-            <button type="submit">Submit</button>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#hero">Home</a>
+        <a href="#products">Products</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <section id="hero" class="hero">
+        <h1 class="fade-in">Glow with Confidence</h1>
+        <p class="slide-in">Discover the best beauty and skincare products.</p>
+        <button class="btn zoom-in">Shop Now</button>
+      </section>
+      <section id="products" class="products">
+        <div class="product fade-in">
+          <h3>Lipstick</h3>
+          <p>Premium quality lipstick for a flawless look.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="product fade-in delay-1">
+          <h3>Serum</h3>
+          <p>Rejuvenate your skin with our premium serum.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="product fade-in delay-2">
+          <h3>Foundation</h3>
+          <p>Perfect coverage foundation for a natural glow.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+      </section>
+      <section id="newsletter" class="newsletter">
+        <h3 class="fade-in">Subscribe for Exclusive Offers</h3>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="input slide-in"
+        />
+        <button class="btn">Subscribe</button>
+      </section>
+      <section id="contact" class="contact">
+        <h3 class="fade-in">Get in Touch</h3>
+        <p class="slide-in">
+          We would love to hear from you! Reach out to us for any inquiries.
+        </p>
+        <form class="contact-form fade-in">
+          <input type="text" placeholder="Your Name" class="input" />
+          <input type="email" placeholder="Your Email" class="input" />
+          <textarea placeholder="Your Message" class="input"></textarea>
+          <button class="btn">Send Message</button>
         </form>
+      </section>
+      <footer class="footer">
+        <p>&copy; 2025 Beauty & Cosmetics. All Rights Reserved.</p>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
-
